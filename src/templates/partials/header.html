@@ -1,0 +1,33 @@
+<!--
+    templateType: global_partial
+    label: Page header
+-->
+<!-- Begin partial -->
+<header class="header">
+  {% if page_meta.html_title %}
+  <h1>{{ page_meta.html_title }}</h1>
+  {% endif %}
+
+
+  {% dnd_area 'dnd_area',label='Section' %}
+  {% dnd_section %}
+  {% dnd_module path='@hubspot/rich_text', offset=6, width=6 %}
+  <p>Editable region</p>
+  {% module_attribute 'html' %}
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+
+  {% end_dnd_section %}
+
+  {% end_dnd_area %}
+
+  <nav>
+    <ul>
+      {# Use Menu Here #}
+      <li>Home</li>
+      <li>About</li>
+      <li>Blog</li>
+    </ul>
+  </nav>
+</header>
+<!-- End partial -->
