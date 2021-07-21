@@ -1,0 +1,30 @@
+<!--
+    templateType: none
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- The below meta tags are not included in HubSpots Boilerplate. Why? -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {% if page_meta.html_title %}
+    <title>{{ page_meta.html_title }}</title>
+    {% endif %}
+    <meta name="description" content="{{ page_meta.meta_description }}" />
+
+    {{ require_css(get_asset_url("../../css/main.css")) }} {{
+    standard_header_includes }}
+  </head>
+  <body>
+    <!-- Header area. What does the block header statement do? -->
+    {% global_partial path='../partials/header.html' %} {% endblock header %}
+
+    <!-- Body -->
+    {% block body %} {% endblock body %} {{
+    require_js(get_asset_url('../../js/main.js')) }} {{ standard_footer_includes
+    }}
+  </body>
+</html>

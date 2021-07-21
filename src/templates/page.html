@@ -1,0 +1,45 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Landing Page
+-->
+
+<!-- Extend base/common -->
+
+{% extends './layouts/common.html' %} {% block body %}
+
+<main id="main-content">
+
+  <!-- Start Area -->
+  {% dnd_area 'dnd_area' class='section',label='Section' %}
+
+  <!-- Start Section -->
+
+  {% dnd_section %} 
+
+
+  <!-- Start Module 1 -->
+  {% dnd_module path='@hubspot/linked_image', img={'alt': 'Coworkers sitting together and smiling outside.', 'max_height': 449,
+  'max_width': 600, 'size_type': 'auto_custom_max', 'src':'https://placekitten.com/800/600'}, offset=0, width=6 %}
+
+  {% end_dnd_module %}
+
+  <!-- Start Module 2 -->
+  {% dnd_module path='@hubspot/rich_text', offset=6, width=6 %}
+
+  {% module_attribute 'html' %}
+
+  <h4>Find Out</h4>
+
+  {% end_module_attribute %}
+
+  {% end_dnd_module %}
+
+
+  {% end_dnd_section %} 
+  
+  {% end_dnd_area %}
+
+</main>
+
+{% endblock body %}
